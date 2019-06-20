@@ -16,19 +16,19 @@
         </tr>
         <tr>
             <td>Employer</td>
-            <td th:text="${jobEntry.getEmployer()}"></td>
+            <td th:value="${jobEntry.getEmployer().id}" th:text="${jobEntry.getEmployer()}"></td>
         </tr>
         <tr>
             <td>Location</td>
-            <td th:text="${jobEntry.getLocation()}"></td>
+            <td th:value="${jobEntry.getLocation().id}" th:text="${jobEntry.getLocation()}"></td>
         </tr>
         <tr>
             <td>Position Type</td>
-            <td th:text="${jobEntry.getPositionType()}"></td>
+            <td th:value="${jobEntry.getPositionType().id}" th:text="${jobEntry.getPositionType()}"></td>
         </tr>
         <tr>
             <td>Core Competency</td>
-            <td th:text="${jobEntry.getCoreCompetency()}"></td>
+            <td th:value="${jobEntry.getCoreCompetency().id}" th:text="${jobEntry.getCoreCompetency()}"></td>
         </tr>
 
     </table>

@@ -1,9 +1,7 @@
 package org.launchcode.models.forms;
 
-import org.launchcode.models.CoreCompetency;
-import org.launchcode.models.Employer;
-import org.launchcode.models.Location;
-import org.launchcode.models.PositionType;
+import javafx.geometry.Pos;
+import org.launchcode.models.*;
 import org.launchcode.models.data.JobData;
 
 import javax.validation.constraints.NotNull;
@@ -20,25 +18,25 @@ public class JobForm {
     private String name;
 
     @NotNull
-    private int employerId;
+    private Employer employer;
 
     @NotNull
-    private int locationId;
+    private Location location;
 
     @NotNull
-    private int coreCompetencyId;
+    private CoreCompetency coreCompetency;
 
     @NotNull
-    private int positionTypeId;
+    private PositionType positionType;
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
     private ArrayList<CoreCompetency> coreCompetencies;
     private ArrayList<PositionType> positionTypes;
 
-    public JobForm() {
+    JobData jobData = JobData.getInstance();
 
-        JobData jobData = JobData.getInstance();
+    public JobForm() {
 
         employers = jobData.getEmployers().findAll();
         locations = jobData.getLocations().findAll();
@@ -57,12 +55,12 @@ public class JobForm {
     }
 
     // Employer ID Getters and Setters
-    public int getEmployerId() {
-        return employerId;
+    public Employer getEmployer() {
+        return employer;
     }
 
-    public void setEmployerId(int employerId) {
-        this.employerId = employerId;
+    public void setEmployer(Employer anEmployer) {
+        this.employer = anEmployer;
     }
 
     public ArrayList<Employer> getEmployers() {
@@ -74,12 +72,13 @@ public class JobForm {
     }
 
     // Location Getters and Setters
-    public int getLocationId() {
-        return locationId;
+
+    public Location getLocation() {
+        return location;
     }
 
-    public void setLocationId(int locationId) {
-        this.locationId = locationId;
+    public void setLocation(Location aLocation) {
+        this.location = aLocation;
     }
 
     public ArrayList<Location> getLocations() {
@@ -91,12 +90,12 @@ public class JobForm {
     }
 
     // Core Competencies Getters and Setters
-    public int getCoreCompetencyId() {
-        return coreCompetencyId;
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
     }
 
-    public void setCoreCompetencyId(int coreCompetencyId) {
-        this.coreCompetencyId = coreCompetencyId;
+    public void setCoreCompetency(CoreCompetency aCoreCompetency) {
+        this.coreCompetency = aCoreCompetency;
     }
 
     public ArrayList<CoreCompetency> getCoreCompetencies() {
@@ -108,12 +107,12 @@ public class JobForm {
     }
 
     // PositionType Getters and Setters
-    public int getPositionTypeId() {
-        return positionTypeId;
+    public PositionType getPositionType() {
+        return positionType;
     }
 
-    public void setPositionTypeId(int positionTypeId) {
-        this.positionTypeId = positionTypeId;
+    public void setPositionType(PositionType aPositionType) {
+        this.positionType = aPositionType;
     }
 
     public ArrayList<PositionType> getPositionTypes() {
